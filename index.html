@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Procesos - Hospital Universitario del Valle</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="contenedor-mapa" id="componente-mapa">
+        <div class="fondo-pasillo-hospital"></div>
+        
+        <svg viewBox="0 0 1350 720" xmlns="http://www.w3.org/2000/svg" class="mapa-svg">
+            
+            <defs>
+                <filter id="sombra-huv" x="-10%" y="-10%" width="120%" height="120%">
+                    <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.2"/>
+                </filter>
+
+                <clipPath id="recorte-circulo-centro">
+                    <circle cx="675" cy="295" r="100" />
+                </clipPath>
+
+               <path id="ruta-texto-izq" d="M 110 520 A 345 345 0 0 1 110 200" fill="none"/>
+<path id="ruta-texto-der" d="M 1240 200 A 345 345 0 0 1 1240 520" fill="none"/>
+            </defs>
+
+            <path d="M 230 135 L 230 65 Q 230 50, 250 50 L 1100 50 Q 1120 50, 1120 65 L 1120 135" fill="none" stroke="#2E7D32" stroke-width="3"/>
+            <path d="M 230 435 L 230 605 Q 230 620, 250 620 L 1100 620 Q 1120 620, 1120 605 L 1120 435" fill="none" stroke="#C62828" stroke-width="3"/>
+
+            <line x1="440" y1="135" x2="550" y2="240" stroke="#475569" stroke-width="2" stroke-dasharray="4 4"/>
+            <line x1="385" y1="220" x2="538" y2="285" stroke="#475569" stroke-width="2" stroke-dasharray="4 4"/>
+            <line x1="375" y1="305" x2="535" y2="315" stroke="#475569" stroke-width="2" stroke-dasharray="4 4"/>
+            <line x1="385" y1="390" x2="542" y2="348" stroke="#475569" stroke-width="2" stroke-dasharray="4 4"/>
+            <line x1="440" y1="475" x2="568" y2="402" stroke="#475569" stroke-width="2" stroke-dasharray="4 4"/>
+            <line x1="910" y1="135" x2="800" y2="240" stroke="#475569" stroke-width="2" stroke-dasharray="4 4"/>
+            <line x1="965" y1="220" x2="812" y2="285" stroke="#475569" stroke-width="2" stroke-dasharray="4 4"/>
+            <line x1="975" y1="305" x2="815" y2="315" stroke="#475569" stroke-width="2" stroke-dasharray="4 4"/>
+            <line x1="965" y1="390" x2="808" y2="348" stroke="#475569" stroke-width="2" stroke-dasharray="4 4"/>
+            <line x1="910" y1="475" x2="782" y2="402" stroke="#475569" stroke-width="2" stroke-dasharray="4 4"/>
+
+            <circle cx="675" cy="295" r="140" fill="none" stroke="#94A3B8" stroke-width="2" stroke-dasharray="6 6"/>
+
+            <g class="nodo-interactivo" onclick="mostrarInfo('Direccionamiento Estratégico y Mercadeo Social', 'Planeación global y objetivos institucionales.')">
+                <rect x="415" y="25" width="240" height="50" rx="25" fill="#2E7D32" filter="url(#sombra-huv)"/>
+                <text x="535" y="46" fill="white" font-weight="bold" font-size="15" text-anchor="middle">Direccionamiento</text>
+                <text x="535" y="60" fill="white" font-weight="bold" font-size="15" text-anchor="middle">estratégico</text>
+            </g>
+
+            <g class="nodo-interactivo" onclick="mostrarInfo('Gestión de Calidad y Mejoramiento', 'Acreditación y ciclos de mejora continua.')">
+                <rect x="695" y="25" width="240" height="50" rx="25" fill="#2E7D32" filter="url(#sombra-huv)"/>
+                <text x="815" y="46" fill="white" font-weight="bold" font-size="15" text-anchor="middle">Gestión de Calidad</text>
+                <text x="815" y="60" fill="white" font-weight="bold" font-size="15" text-anchor="middle">y Mejoramiento</text>
+            </g>
+
+            <g class="nodo-interactivo" onclick="mostrarInfo('Hospitalización y atención especializada', 'Servicios de internación.')">
+                <rect x="220" y="110" width="220" height="50" rx="25" fill="#1565C0" filter="url(#sombra-huv)"/>
+                <text x="330" y="132" fill="white" font-weight="bold" font-size="15" text-anchor="middle">Hospitalización y</text>
+                <text x="330" y="145" fill="white" font-weight="bold" font-size="15" text-anchor="middle">atención especializada</text>
+            </g>
+            <g class="nodo-interactivo" onclick="mostrarInfo('Atención de urgencias y emergencias', 'Cuidado crítico inmediato.')">
+                <rect x="165" y="195" width="220" height="50" rx="25" fill="#1565C0" filter="url(#sombra-huv)"/>
+                <text x="275" y="217" fill="white" font-weight="bold" font-size="15" text-anchor="middle">Atención de urgencias</text>
+                <text x="275" y="230" fill="white" font-weight="bold" font-size="15" text-anchor="middle">y emergencias</text>
+            </g>
+            <g class="nodo-interactivo" onclick="mostrarInfo('Atención en consulta externa', 'Consultas ambulatorias médicas.')">
+                <rect x="155" y="280" width="220" height="50" rx="25" fill="#1565C0" filter="url(#sombra-huv)"/>
+                <text x="265" y="302" fill="white" font-weight="bold" font-size="15" text-anchor="middle">Atención en</text>
+                <text x="265" y="315" fill="white" font-weight="bold" font-size="15" text-anchor="middle">consulta externa</text>
+            </g>
+            <g class="nodo-interactivo" onclick="mostrarInfo('Departamento de Enfermería', 'Gestión integral del cuidado.')">
+                <rect x="165" y="365" width="220" height="50" rx="25" fill="#1565C0" filter="url(#sombra-huv)"/>
+                <text x="275" y="394" fill="white" font-weight="bold" font-size="13" text-anchor="middle">Departamento de Enfermería</text>
+            </g>
+            <g class="nodo-interactivo" onclick="mostrarInfo('Apoyo diagnóstico', 'Laboratorio e imagenología.')">
+                <rect x="220" y="450" width="220" height="50" rx="25" fill="#1565C0" filter="url(#sombra-huv)"/>
+                <text x="330" y="479" fill="white" font-weight="bold" font-size="15" text-anchor="middle">Apoyo diagnóstico</text>
+            </g>
+
+            <g class="nodo-interactivo" onclick="mostrarInfo('Atención Quirúrgica', 'Quirófanos y cirugías complejas.')">
+                <rect x="910" y="110" width="220" height="50" rx="25" fill="#1565C0" filter="url(#sombra-huv)"/>
+                <text x="1020" y="139" fill="white" font-weight="bold" font-size="15" text-anchor="middle">Atención Quirúrgica</text>
+            </g>
+            <g class="nodo-interactivo" onclick="mostrarInfo('Apoyo terapéutico y rehabilitación', 'Terapias y rehabilitación.')">
+                <rect x="965" y="195" width="220" height="50" rx="25" fill="#1565C0" filter="url(#sombra-huv)"/>
+                <text x="1075" y="217" fill="white" font-weight="bold" font-size="15" text-anchor="middle">Apoyo terapéutico y</text>
+                <text x="1075" y="230" fill="white" font-weight="bold" font-size="15" text-anchor="middle">rehabilitación</text>
+            </g>
+            <g class="nodo-interactivo" onclick="mostrarInfo('Atención de banco de sangre', 'Medicina transfusional.')">
+                <rect x="975" y="280" width="220" height="50" rx="25" fill="#1565C0" filter="url(#sombra-huv)"/>
+                <text x="1085" y="302" fill="white" font-weight="bold" font-size="13" text-anchor="middle">Atención de banco de sangre</text>
+                <text x="1085" y="315" fill="white" font-weight="bold" font-size="13" text-anchor="middle">y terapia transfusional</text>
+            </g>
+            <g class="nodo-interactivo" onclick="mostrarInfo('Servicio farmacéutico', 'Gestión de medicamentos.')">
+                <rect x="965" y="365" width="220" height="50" rx="25" fill="#1565C0" filter="url(#sombra-huv)"/>
+                <text x="1075" y="394" fill="white" font-weight="bold" font-size="15" text-anchor="middle">Servicio farmacéutico</text>
+            </g>
+            <g class="nodo-interactivo" onclick="mostrarInfo('Coordinación académica', 'Formación de estudiantes de salud.')">
+                <rect x="910" y="450" width="220" height="50" rx="25" fill="#1565C0" filter="url(#sombra-huv)"/>
+                <text x="1020" y="479" fill="white" font-weight="bold" font-size="15" text-anchor="middle">Coordinación académica</text>
+            </g>
+
+            <circle cx="440" cy="135" r="22" fill="#1A237E" filter="url(#sombra-huv)"/>
+            <circle cx="385" cy="220" r="22" fill="#1A237E" filter="url(#sombra-huv)"/>
+            <circle cx="375" cy="305" r="22" fill="#1A237E" filter="url(#sombra-huv)"/>
+            <circle cx="385" cy="390" r="22" fill="#1A237E" filter="url(#sombra-huv)"/>
+            <circle cx="440" cy="475" r="22" fill="#1A237E" filter="url(#sombra-huv)"/>
+            <circle cx="910" cy="135" r="22" fill="#1A237E" filter="url(#sombra-huv)"/>
+            <circle cx="965" cy="220" r="22" fill="#1A237E" filter="url(#sombra-huv)"/>
+            <circle cx="975" cy="305" r="22" fill="#1A237E" filter="url(#sombra-huv)"/>
+            <circle cx="965" cy="390" r="22" fill="#1A237E" filter="url(#sombra-huv)"/>
+            <circle cx="910" cy="475" r="22" fill="#1A237E" filter="url(#sombra-huv)"/>
+
+            <g filter="url(#sombra-huv)">
+                <circle cx="675" cy="295" r="110" fill="#FFFFFF" stroke="#00A896" stroke-width="4"/>
+                <circle cx="675" cy="295" r="103" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+                <image href="HUV2.jfif" x="575" y="195" width="200" height="200" clip-path="url(#recorte-circulo-centro)" />
+            </g>
+
+            <g class="nodo-interactivo" onclick="mostrarInfo('Clientes: Necesidades y Expectativas', 'Entrada del sistema: Requisitos asistenciales.')" filter="url(#sombra-huv)">
+                <path d="M 115 160 A 380 380 0 0 0 115 560 A 30 30 0 0 0 155 530 A 330 330 0 0 1 155 190 A 30 30 0 0 0 115 160 Z" fill="#02B2E8"/>
+                <text font-weight="bold" font-size="17" fill="white" text-anchor="middle">
+    <textPath href="#ruta-texto-izq" startOffset="50%">Clientes: Necesidades y Expectativas</textPath>
+                </text>
+            </g>
+            
+            <g class="nodo-interactivo" onclick="mostrarInfo('Clientes Satisfechos', 'Salida del sistema: Usuarios atendidos con éxito.')" filter="url(#sombra-huv)">
+                <path d="M 1235 160 A 380 380 0 0 1 1235 560 A 30 30 0 0 1 1195 530 A 330 330 0 0 0 1195 190 A 30 30 0 0 1 1235 160 Z" fill="#02B2E8"/>
+                <text font-weight="bold" font-size="17" fill="white" text-anchor="middle">
+    <textPath href="#ruta-texto-der" startOffset="50%">Clientes Satisfechos</textPath>
+                </text>
+            </g>
+
+            <g class="nodo-interactivo" onclick="mostrarInfo('Gestión de compras', 'Abastecimiento.')">
+                <text x="675" y="465" fill="#1E293B" font-weight="bold" font-size="20" text-anchor="middle"><tspan fill="#C62828" font-size="18">● </tspan>Gestión de compras</text>
+            </g>
+            <g class="nodo-interactivo" onclick="mostrarInfo('Gestión de talento humano', 'Personal.')">
+                <text x="675" y="495" fill="#1E293B" font-weight="bold" font-size="20" text-anchor="middle"><tspan fill="#C62828" font-size="18">● </tspan>Gestión de talento humano</text>
+            </g>
+            <g class="nodo-interactivo" onclick="mostrarInfo('Gestión de la información', 'Sistemas.')">
+                <text x="675" y="525" fill="#1E293B" font-weight="bold" font-size="20" text-anchor="middle"><tspan fill="#C62828" font-size="18">● </tspan>Gestión de la información</text>
+            </g>
+            <g class="nodo-interactivo" onclick="mostrarInfo('Gestión de la Atención del usuario', 'SIAU.')">
+                <text x="675" y="555" fill="#1E293B" font-weight="bold" font-size="20" text-anchor="middle"><tspan fill="#C62828" font-size="18">● </tspan>Gestión de la Atención del usuario</text>
+            </g>
+            <g class="nodo-interactivo" onclick="mostrarInfo('Gestión técnica, logística y ambiental', 'Mantenimiento.')">
+                <text x="675" y="585" fill="#1E293B" font-weight="bold" font-size="20" text-anchor="middle"><tspan fill="#C62828" font-size="18">● </tspan>Gestión técnica, logística y ambiental</text>
+            </g>
+
+            <g filter="url(#sombra-huv)">
+                <path d="M 400 625 L 950 625 C 970 625, 970 665, 950 665 L 400 665 C 380 665, 380 625, 400 625 Z" fill="#C62828"/>
+                <line x1="585" y1="625" x2="585" y2="665" stroke="#FFFFFF" stroke-width="1.5"/>
+                <line x1="755" y1="625" x2="755" y2="665" stroke="#FFFFFF" stroke-width="1.5"/>
+            </g>
+            <g class="nodo-interactivo" onclick="mostrarInfo('Gestión de presupuesto', 'Finanzas.')">
+                <text x="492" y="641" fill="white" font-weight="bold" font-size="15" text-anchor="middle">Gestión de presupuesto</text>
+                <text x="492" y="654" fill="white" font-weight="bold" font-size="15" text-anchor="middle">contabilidad y costos</text>
+            </g>
+            <g class="nodo-interactivo" onclick="mostrarInfo('Gestión de facturación', 'Cartera.')">
+                <text x="670" y="641" fill="white" font-weight="bold" font-size="15" text-anchor="middle">Gestión de facturación</text>
+                <text x="670" y="654" fill="white" font-weight="bold" font-size="15" text-anchor="middle">cartera y recaudo</text>
+            </g>
+            <g class="nodo-interactivo" onclick="mostrarInfo('Tesorería general', 'Flujo de caja.')">
+                <text x="852" y="650" fill="white" font-weight="bold" font-size="15" text-anchor="middle">Tesorería general</text>
+            </g>
+
+            <g class="nodo-interactivo" onclick="mostrarInfo('Control interno', 'Auditoría interna institucional.')">
+                <rect x="445" y="682" width="160" height="32" rx="16" fill="#FBC02D" filter="url(#sombra-huv)"/>
+                <text x="525" y="702" fill="#1E293B" font-weight="bold" font-size="15" text-anchor="middle">Control interno</text>
+            </g>
+
+            <g class="nodo-interactivo" onclick="mostrarInfo('Control disciplinario interno', 'Garantía del régimen disciplinario público.')">
+                <rect x="645" y="682" width="240" height="32" rx="16" fill="#FBC02D" filter="url(#sombra-huv)"/>
+                <text x="765" y="702" fill="#1E293B" font-weight="bold" font-size="15" text-anchor="middle">Control disciplinario interno</text>
+            </g>
+
+        </svg>
+
+        <div id="modal" class="modal" onclick="cerrarModal()">
+            <div class="modal-box" onclick="event.stopPropagation()">
+                <h2 id="info-titulo"></h2>
+                <div class="linea-modal"></div>
+                <p id="info-texto"></p>
+                <button class="btn-cerrar-modal" onclick="cerrarModal()">Cerrar Ventana</button>
+            </div>
+        </div>
+
+    </div>
+
+    <button onclick="activarPantallaCompleta()" class="btn-fullscreen">⛶ Pantalla Completa</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
